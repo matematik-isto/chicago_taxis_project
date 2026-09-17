@@ -1,0 +1,6 @@
+# Descargar .csv de la siguiente url y guardar en data/raw. Si no se filtra, la base de datos contiene casi 25 millones de registros.
+https://data.cityofchicago.org/Transportation/Taxi-Trips-2017/jeij-fq8w/explore/query/SELECT%0A%20%20%60trip_id%60%2C%0A%20%20%60taxi_id%60%2C%0A%20%20%60trip_start_timestamp%60%2C%0A%20%20%60trip_end_timestamp%60%2C%0A%20%20%60trip_seconds%60%2C%0A%20%20%60trip_miles%60%2C%0A%20%20%60pickup_community_area%60%2C%0A%20%20%60dropoff_community_area%60%0AWHERE%0A%20%20%28%60trip_start_timestamp%60%0A%20%20%20%20%20%3E%3D%20%222017-11-01T00%3A00%3A00%22%20%3A%3A%20floating_timestamp%29%0A%20%20AND%20%28%60trip_end_timestamp%60%0A%20%20%20%20%20%20%20%20%20%3C%3D%20%222017-12-01T22%3A00%3A00%22%20%3A%3A%20floating_timestamp%29/page/column_manager
+# Alternativamente usar la API con el endpoint
+# https://data.cityofchicago.org/api/v3/views/jeij-fq8w/query.json
+# Requiere autenticación. Por defecto devuelve 1000 registros así que se necesita usar el siguiente parámetro para recorrer todos los datos
+# parameter: '$offset=' multiplos de 1000
